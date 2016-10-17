@@ -30,7 +30,9 @@
         <section id="main-content">
           <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Behold, the Oodler</h3>
+<p>information about the oodler goes here</p>
 
+          
           <form name="oodler" id="oodler">
             <p>Enter a word/phrase to oodle-ise</p>
             <p><input type="text" name="inputText"/></p>
@@ -49,11 +51,11 @@
             function speak(form) {
               var msg = new SpeechSynthesisUtterance();
               var voices = window.speechSynthesis.getVoices();
-              msg.voice = voices[3]; // Note: some voices don't support altering params
+              msg.voice = voices[5]; // Note: some voices don't support altering params
               msg.voiceURI = 'native';
               msg.volume = 1; // 0 to 1
               msg.rate = 1; // 0.1 to 10
-              msg.pitch = 2; //0 to 2
+              msg.pitch = 1; //0 to 2
               msg.text = form.outputText.value;
               msg.lang = 'en-US';
 
@@ -68,8 +70,6 @@
             
           </script>
           
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
         </section>
 
