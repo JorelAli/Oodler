@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    
+    <script type="text/javascript" src="oodler.js"></script>
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,24 +32,25 @@
         <section id="main-content">
           <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Behold, the Oodler</h3>
-<p>information about the oodler goes here</p>
+<p>The oodler replaces vowels with the word "oodle". Nothing more, nothing less. (Also, please don't hate because the text box has male/female voices - the code just has those as options, I'm not biased against other genders or anything)</p>
 
           
           <form name="oodler" id="oodler">
-            <p>Enter a word/phrase to oodle-ise</p>
+            <p>Enter a word/phrase to oodlize</p>
             <p><input type="text" name="inputText"/></p>
             <p><input type="button" onclick="oodlise(this.form)" value="Oodlize!"/></p>
             <p><input type="text" name="outputText" readonly/></p>
             <p><input type="button" onclick="speak(this.form)" value="Say it out loud!"/> 
               <select name="voice">
-                <option value="1">Voice 1</option>
-                <option value="2">Voice 2</option>
-                <option value="3">Voice 3</option>
-                <option value="4">Voice 4</option>
+                <option value="0">Voice 1 (Default voice)</option>
+                <option value="2">Voice 2 (US voice)</option>
+                <option value="3">Voice 3 (UK Female voice)</option>
+                <option value="4">Voice 4 (UK Male voice)</option>
               </select>
             </p>
           </form>
-          <script language="javascript">
+          
+          <!--<script language="javascript">
             function oodlise(form) {
               var input1 = form.inputText.value;
               var input2 = input1.replace(/[aeiou]/g, "oodle");
@@ -72,12 +75,7 @@
 
               speechSynthesis.speak(msg);
             }
-          
-          
-            
-          </script>
-          
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+          </script>-->
         </section>
 
         <aside id="sidebar">
