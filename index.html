@@ -32,14 +32,22 @@
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
           <form name="oodler" id="oodler">
-    <p><input type="text" name="inputText"/></p>
-    <p><input type="button" onclick="enter(this.form)" value="Enter"/></p>
-</form>
+            <p>Enter a word/phrase to oodle-ise</p>
+            <p><input type="text" name="inputText"/></p>
+            <p><input type="button" onclick="oodlise(this.form)" value="Oodlize!"/></p>
+            <p><input type="text" name="outputText" readonly/></p>
+            <p><input type="button" onclick="speak(this.form)" value="Say it out loud!"/></p>
+          </form>
           <script language="javascript">
+            function oodlise(form) {
+              var input1 = form.inputText.value;
+              var input2 = input1.replace("/[aeiou]/g", "oodle");
+              form.outputText.value = input2;
+            }
               
               
               
-            function enter(form) {
+            function speak(form) {
               var msg = new SpeechSynthesisUtterance();
               var voices = window.speechSynthesis.getVoices();
               msg.voice = voices[10]; // Note: some voices don't support altering params
