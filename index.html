@@ -39,19 +39,23 @@
             <p><input type="button" onclick="oodlise(this.form)" value="Oodlize!"/></p>
             <p><input type="text" name="outputText" readonly/></p>
             <p><input type="button" onclick="speak(this.form)" value="Say it out loud!"/></p>
+            
+            <p><input type="text" name="voiceNumber" value="3"/></p>
           </form>
           <script language="javascript">
             function oodlise(form) {
               var input1 = form.inputText.value;
               var input2 = input1.replace(/[aeiou]/g, "oodle");
               var input3 = input2.replace(/[AEIOU]/g, "Oodle");
+              
+              
               form.outputText.value = input3;
             }
 
             function speak(form) {
               var msg = new SpeechSynthesisUtterance();
               var voices = window.speechSynthesis.getVoices();
-              msg.voice = voices[8]; // Note: some voices don't support altering params
+              msg.voice = voices[parseInt(form.voiceNumber.value)]; // Note: some voices don't support altering params
               msg.voiceURI = 'native';
               msg.volume = 1; // 0 to 1
               msg.rate = 1; // 0.1 to 10
