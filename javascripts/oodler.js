@@ -1,4 +1,8 @@
-alert("test message")
+var voices = window.speechSynthesis.getVoices();
+var options = document.getElementById("voiceComboBox").options;
+for(var i = 0; n = voices.length; i < n; i++) {
+  document.getElementById("voiceComboBox").options[i] = voices[i].name;
+}   
 
 function oodlise(form) {
   var input1 = form.inputText.value;
