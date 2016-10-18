@@ -1,9 +1,19 @@
 window.speechSynthesis.onvoiceschanged = function() {
   console.log("updating voices");
     var voices = window.speechSynthesis.getVoices();
-    var options = document.getElementById("voiceComboBox").options;
-    for(var i = 0, n = voices.length; i < n; i++) {
-     options.add(voices[i].name, null);
+    //var options = document.getElementById("voiceComboBox").options;
+    for(var i = 0; i < voices.length; i++) {
+      
+      var option = document.createElement('option');
+      option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+    
+      if(voices[i].default) {
+        option.textContent = 'Default voice (native)';
+      }
+
+      option.setAttribute('data-lang', voices[i].lang);
+      option.setAttribute('data-name', voices[i].name);
+      document.getElementById("voiceComboBox").appendChild(option);
     }   
 };
 
