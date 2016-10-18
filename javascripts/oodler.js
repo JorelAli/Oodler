@@ -1,5 +1,6 @@
+boolean voiceUpdated = false;
 window.speechSynthesis.onvoiceschanged = function() {
-  console.log("updating voices");
+  if(voiceUpdated == false) {
     var voices = window.speechSynthesis.getVoices();
     //var options = document.getElementById("voiceComboBox").options;
     for(var i = 0; i < voices.length; i++) {
@@ -17,6 +18,8 @@ window.speechSynthesis.onvoiceschanged = function() {
       
       document.getElementById("voiceComboBox").appendChild(option);
     }   
+    voiceUpdated = true;
+  }
 };
 
 function oodlise(form) {
