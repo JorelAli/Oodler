@@ -1,6 +1,6 @@
 var voices = window.speechSynthesis.getVoices();
 var options = document.getElementById("voiceComboBox").options;
-for(var i = 0; n = voices.length; i < n; i++) {
+for(var i = 0, n = voices.length; i < n; i++) {
   document.getElementById("voiceComboBox").options[i] = voices[i].name;
 }   
 
