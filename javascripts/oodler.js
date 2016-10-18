@@ -10,9 +10,11 @@ window.speechSynthesis.onvoiceschanged = function() {
       if(voices[i].default) {
         option.textContent = 'Default voice (native)';
       }
-
+      
+      option.setAttribute('data-voiceid', i);
       option.setAttribute('data-lang', voices[i].lang);
       option.setAttribute('data-name', voices[i].name);
+      
       document.getElementById("voiceComboBox").appendChild(option);
     }   
 };
@@ -27,7 +29,7 @@ function oodlise(form) {
 function speak(form) {
   var msg = new SpeechSynthesisUtterance();
   var voices = window.speechSynthesis.getVoices();
-  msg.voice = voices[parseInt(form.voice.value)]; // Note: some voices don't support altering params
+  msg.voice = voices[parseInt(form.voice.data-voiceid)]; // Note: some voices don't support altering params
   msg.voiceURI = 'native';
   msg.volume = 1; // 0 to 1
   msg.rate = 1; // 0.1 to 10
