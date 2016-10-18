@@ -1,4 +1,4 @@
-boolean voiceUpdated = false;
+var voiceUpdated = false;
 window.speechSynthesis.onvoiceschanged = function() {
   if(voiceUpdated == false) {
     var voices = window.speechSynthesis.getVoices();
