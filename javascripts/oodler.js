@@ -1,3 +1,5 @@
+alert("test message")
+
 function oodlise(form) {
   var input1 = form.inputText.value;
   var input2 = input1.replace(/[aeiou]/g, "oodle");
