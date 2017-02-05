@@ -22,6 +22,11 @@ window.speechSynthesis.onvoiceschanged = function() {
   }
 };
 
+function copy(form) {
+  document.getElementById("outputText").select();
+  document.execCommand('copy');
+}
+
 function oodlise(form) {
   var input1 = form.inputText.value;
   var input2 = input1.replace(/[aeiou]/g, "oodle");
