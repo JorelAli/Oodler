@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,13 +33,32 @@
 <p>The oodler replaces vowels with the word "oodle". Nothing more, nothing less. (Also, please don't hate because the text box has male/female voices - the code just has those as options, I'm not biased against other genders or anything)</p>
 
           <form name="oodler" id="oodler" onsubmit="oodlise(this)">
-            <p>Enter a word/phrase to oodlize</p>
-            <p><input type="text" name="inputText"/></p>
-            <p><input type="button" onclick="oodlise(this.form)" value="Oodlize!"/></p>
-            <p><input type="text" name="outputText" id="outputText" readonly/> <input type="button" onclick="copy(this.form)" id="copyButton" value="Copy to clipboard!"/></p>
-            <p><input type="button" onclick="speak(this.form)" value="Say it out loud!"/> 
-              <select id="voiceComboBox" name="voice"></select>
-            </p>
+            <div class="form-group">
+              <label for="description">Enter a word/phrase to oodlize</label>
+              <input class="form-control" type="text" name="inputText"/>
+            </div>
+            <input class="btn btn-success container-fluid" type="button" onclick="oodlise(this.form)" value="Oodlize!"/>
+            <br><br>
+            <div class="form-group">
+                <input class="form-control" type="text" name="outputText" id="outputText" readonly/>               
+                <br>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <p class="col-md-6">
+                            <input type="button" class="btn btn-info container-fluid"  onclick="copy(this.form)" id="copyButton" value="Copy to clipboard!"/>
+                        </p>
+                        <p class="col-md-6">
+                            <input class="btn btn-info container-fluid" type="button" onclick="speak(this.form)" value="Say it out loud!"/> 
+                        </p>
+                        
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <select class="form-control" id="voiceComboBox" name="voice"/>
+                </div>
+                
+            </div>
           </form>
         </section>
 
