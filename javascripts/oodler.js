@@ -28,9 +28,19 @@ function copy(form) {
 }
 
 function oodlise(form) {
+  var secret = form.secret;
+  
   var input1 = form.inputText.value;
-  var input2 = input1.replace(/[aeiou]/g, "oodle");
-  var input3 = input2.replace(/[AEIOU]/g, "Oodle");
+  var input2 = null;
+  var input3 = null;
+  if(secret == undefined) {
+	input2 = input1.replace(/[aeiou]/g, "oodle");
+	input3 = input2.replace(/[AEIOU]/g, "Oodle");
+  } else {
+	input2 = input1.replace(/[aeiou]/g, secret.value.toLowerCase());
+	input3 = input2.replace(/[AEIOU]/g, secret.value.charAt(0).toUpperCase() + secret.value.slice(1));
+  }
+  
   form.outputText.value = input3;
 }
 
