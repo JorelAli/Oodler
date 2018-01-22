@@ -9,6 +9,8 @@ var allowedKeys = {
   66: 'b'
 };
 
+var activated = false;
+
 // the 'official' Konami Code sequence
 var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
@@ -38,10 +40,21 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+function update(event) {
+	var secret = document.getElementById('secret').value;
+	document.getElementById('ooodlizeButton').value = secret.charAt(0).toUpperCase() + secret.slice(1) + "-ize!";
+	if (event.keyCode == 13) document.getElementById('ooodlizeButton').click();
+}
+
 function activateCheats() {
+	if(activated == false) {
+		activated = true;
+	} else {
+		return;
+	}
 	//Create our extra element:
 	var div = document.createElement('div');
-	div.innerHTML = '<label for="description">Enter a replacement for oodle</label><input class="form-control" type="text" name="secret"  onkeydown = "if (event.keyCode == 13) document.getElementById(\'ooodlizeButton\').click()"/>';
+	div.innerHTML = '<label for="description">Enter a replacement for oodle</label><input class="form-control" type="text" id="secret" name="secret"  onkeyup = "update(event)"/>';
 	div.className = 'form-group';
 	
 	var oodleInput = document.getElementById("oodleInput");
